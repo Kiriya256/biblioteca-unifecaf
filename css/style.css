@@ -1,0 +1,566 @@
+
+/* ==========================================
+   BIBLIOTECA DIGITAL UNIFECAF
+   PROJETO DE DESIGN WEB
+========================================== */
+
+/* 1. CONFIGURAÇÕES GERAIS */
+
+:root {
+    --azul-principal: #123b75;
+    --azul-escuro: #0b2548;
+    --azul-claro: #eaf3ff;
+    --azul-destaque: #2477c7;
+    --branco: #ffffff;
+    --fundo: #f5f7fb;
+    --texto: #263445;
+    --texto-suave: #5d6b7a;
+    --borda: #e1e7ef;
+
+    --sombra: 0 8px 24px rgba(12, 35, 65, 0.08);
+    --raio: 14px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--fundo);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 80px 0;
+}
+
+section h2 {
+    font-size: 2rem;
+    color: var(--azul-principal);
+    margin-bottom: 25px;
+}
+
+:focus-visible {
+    outline: 3px solid #f5b841;
+    outline-offset: 4px;
+}
+
+/* 2. CABEÇALHO */
+
+.cabecalho {
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    padding: 22px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+.cabecalho-conteudo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo {
+    font-size: 1.35rem;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+.logo span {
+    color: #8ecaff;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+}
+
+.menu a {
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #8ecaff;
+}
+
+/* 3. BOTÕES */
+
+.botao {
+    display: inline-block;
+    background-color: var(--azul-destaque);
+    color: var(--branco);
+    padding: 14px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.botao:hover {
+    background-color: var(--azul-principal);
+    transform: translateY(-3px);
+}
+
+/* 4. BANNER PRINCIPAL */
+
+.banner {
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--branco);
+
+    background:
+        linear-gradient(
+            rgba(8, 30, 59, 0.82),
+            rgba(18, 59, 117, 0.78)
+        ),
+        url("../assets/imagens/biblioteca.jpg")
+        center / cover no-repeat;
+}
+
+.banner-conteudo {
+    max-width: 850px;
+}
+
+.banner h1 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.2;
+    margin-bottom: 22px;
+}
+
+.banner p {
+    font-size: 1.15rem;
+    margin-bottom: 32px;
+    color: #eef5ff;
+}
+
+/* 5. SOBRE A BIBLIOTECA */
+
+.sobre {
+    background-color: var(--branco);
+}
+
+.sobre-conteudo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.sobre-texto h3 {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+}
+
+.sobre-texto p {
+    color: var(--texto-suave);
+    margin-bottom: 18px;
+}
+
+.sobre-imagem img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+}
+
+/* 6. DESTAQUES */
+
+.destaques {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 55px;
+}
+
+.destaque {
+    background-color: var(--azul-claro);
+    padding: 28px 22px;
+    border-radius: var(--raio);
+    border: 1px solid #d5e6fa;
+    transition: transform 0.3s;
+}
+
+.destaque:hover {
+    transform: translateY(-5px);
+}
+
+.destaque h3 {
+    color: var(--azul-principal);
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+}
+
+.destaque p {
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+}
+
+/* 7. FAIXA DE DESTAQUE */
+
+.faixa-destaque {
+    background: linear-gradient(
+        120deg,
+        var(--azul-principal),
+        var(--azul-destaque)
+    );
+
+    color: var(--branco);
+    text-align: center;
+    padding: 65px 0;
+}
+
+.faixa-destaque h2 {
+    color: var(--branco);
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.faixa-destaque p {
+    font-size: 1.1rem;
+    color: #e7f2ff;
+}
+
+/* 8. CATÁLOGO DE LIVROS */
+
+.livros {
+    background-color: var(--fundo);
+    text-align: center;
+}
+
+.secao-descricao {
+    max-width: 650px;
+    margin: 0 auto 45px;
+    color: var(--texto-suave);
+}
+
+.livros-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    text-align: left;
+}
+
+.livro-card {
+    background-color: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.livro-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(12, 35, 65, 0.14);
+}
+
+.livro-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: contain;
+    background-color: #eef2f7;
+    padding: 18px;
+}
+
+.livro-card h3 {
+    font-size: 1.25rem;
+    color: var(--azul-principal);
+    margin: 22px 22px 10px;
+}
+
+.livro-card p {
+    margin: 0 22px 18px;
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+}
+
+.categoria {
+    display: inline-block;
+    background-color: var(--azul-claro);
+    color: var(--azul-principal);
+    padding: 7px 12px;
+    margin: 0 22px 24px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* 9. UNIDADES */
+
+.unidades {
+    background-color: var(--branco);
+}
+
+.unidade {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+    margin-bottom: 45px;
+    padding-bottom: 45px;
+    border-bottom: 1px solid var(--borda);
+}
+
+.unidade:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.unidade:nth-of-type(even) img {
+    order: 2;
+}
+
+.unidade img {
+    width: 100%;
+    height: 290px;
+    object-fit: cover;
+    border-radius: var(--raio);
+}
+
+.unidade-texto h3 {
+    font-size: 1.5rem;
+    color: var(--azul-principal);
+    margin-bottom: 15px;
+}
+
+.unidade-texto p {
+    color: var(--texto-suave);
+}
+
+/* 10. CONTATO */
+
+.contato {
+    background-color: var(--azul-claro);
+}
+
+.contato-conteudo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.contato p {
+    color: var(--texto-suave);
+    margin-bottom: 25px;
+}
+
+.contato-imagem img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: var(--raio);
+    box-shadow: var(--sombra);
+}
+
+/* 11. RODAPÉ */
+
+.rodape {
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    text-align: center;
+    padding: 35px 0;
+}
+
+.rodape p {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.rodape p:last-child {
+    color: #c3d2e4;
+    margin-bottom: 0;
+}
+
+/* 12. RESPONSIVIDADE - TABLETS */
+
+@media (max-width: 992px) {
+
+    .cabecalho-conteudo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px 24px;
+    }
+
+    .destaques {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .livros-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sobre-conteudo,
+    .contato-conteudo {
+        gap: 30px;
+    }
+
+    .unidade {
+        gap: 30px;
+    }
+}
+
+/* 13. RESPONSIVIDADE - SMARTPHONES */
+
+@media (max-width: 600px) {
+
+    html {
+        scroll-padding-top: 150px;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    section {
+        padding: 55px 0;
+    }
+
+    section h2 {
+        font-size: 1.65rem;
+    }
+
+    .cabecalho {
+        position: relative;
+        padding: 18px 0;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .menu {
+        gap: 12px 18px;
+    }
+
+    .menu a {
+        font-size: 0.88rem;
+    }
+
+    .banner {
+        min-height: 410px;
+        padding: 70px 0;
+    }
+
+    .banner h1 {
+        font-size: 2rem;
+    }
+
+    .banner p {
+        font-size: 1rem;
+    }
+
+    .sobre-conteudo,
+    .contato-conteudo,
+    .unidade {
+        grid-template-columns: 1fr;
+    }
+
+    .sobre-imagem img,
+    .contato-imagem img {
+        height: 260px;
+    }
+
+    .destaques {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 35px;
+    }
+
+    .faixa-destaque {
+        padding: 50px 0;
+    }
+
+    .faixa-destaque h2 {
+        font-size: 1.65rem;
+    }
+
+    .livros-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .livro-card img {
+        height: 250px;
+    }
+
+    .unidade {
+        gap: 22px;
+        margin-bottom: 35px;
+        padding-bottom: 35px;
+    }
+
+    .unidade img {
+        height: 230px;
+    }
+
+    .unidade:nth-of-type(even) img {
+        order: 0;
+    }
+
+    .contato-imagem img {
+        height: 240px;
+    }
+
+    .rodape {
+        padding: 30px 0;
+    }
+}
+
+/* 14. ACESSIBILIDADE - MOVIMENTO REDUZIDO */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}
